@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5FA009D153A2ECA0089A1AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009C153A2ECA0089A1AD /* UIKit.framework */; };
+		F5FA009F153A2ECA0089A1AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009E153A2ECA0089A1AD /* Foundation.framework */; };
+		F5FA00A1153A2ECA0089A1AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA00A0153A2ECA0089A1AD /* CoreGraphics.framework */; };
+		F5FA00A7153A2ECA0089A1AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5FA00A5153A2ECA0089A1AD /* InfoPlist.strings */; };
+		F5FA00A9153A2ECA0089A1AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00A8153A2ECA0089A1AD /* main.m */; };
+		F5FA00AD153A2ECA0089A1AD /* ScavengerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00AC153A2ECA0089A1AD /* ScavengerAppDelegate.m */; };
+		F5FA00B0153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5FA00AE153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard */; };
+		F5FA00B3153A2ECB0089A1AD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5FA00B1153A2ECB0089A1AD /* MainStoryboard_iPad.storyboard */; };
+		F5FA00B6153A2ECB0089A1AD /* ScavengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00B5153A2ECB0089A1AD /* ScavengerViewController.m */; };
+		F5FA00BE153A2ECB0089A1AD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA00BD153A2ECB0089A1AD /* SenTestingKit.framework */; };
+		F5FA00BF153A2ECB0089A1AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009C153A2ECA0089A1AD /* UIKit.framework */; };
+		F5FA00C0153A2ECB0089A1AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009E153A2ECA0089A1AD /* Foundation.framework */; };
+		F5FA00C8153A2ECB0089A1AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5FA00C6153A2ECB0089A1AD /* InfoPlist.strings */; };
+		F5FA00CB153A2ECB0089A1AD /* ScavengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5FA00C1153A2ECB0089A1AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5FA008F153A2ECA0089A1AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5FA0097153A2ECA0089A1AD;
+			remoteInfo = Scavenger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F5FA0098153A2ECA0089A1AD /* Scavenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scavenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5FA009C153A2ECA0089A1AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F5FA009E153A2ECA0089A1AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F5FA00A0153A2ECA0089A1AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F5FA00A4153A2ECA0089A1AD /* Scavenger-Info.plist */ = {isa = PBXFileReference; path = "Scavenger-Info.plist"; sourceTree = "<group>"; };
+		F5FA00A6153A2ECA0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F5FA00A8153A2ECA0089A1AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5FA00AA153A2ECA0089A1AD /* Scavenger-Prefix.pch */ = {isa = PBXFileReference; path = "Scavenger-Prefix.pch"; sourceTree = "<group>"; };
+		F5FA00AB153A2ECA0089A1AD /* ScavengerAppDelegate.h */ = {isa = PBXFileReference; path = ScavengerAppDelegate.h; sourceTree = "<group>"; };
+		F5FA00AC153A2ECA0089A1AD /* ScavengerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerAppDelegate.m; sourceTree = "<group>"; };
+		F5FA00AF153A2ECB0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F5FA00B2153A2ECB0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F5FA00B4153A2ECB0089A1AD /* ScavengerViewController.h */ = {isa = PBXFileReference; path = ScavengerViewController.h; sourceTree = "<group>"; };
+		F5FA00B5153A2ECB0089A1AD /* ScavengerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerViewController.m; sourceTree = "<group>"; };
+		F5FA00BC153A2ECB0089A1AD /* ScavengerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScavengerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5FA00BD153A2ECB0089A1AD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F5FA00C5153A2ECB0089A1AD /* ScavengerTests-Info.plist */ = {isa = PBXFileReference; path = "ScavengerTests-Info.plist"; sourceTree = "<group>"; };
+		F5FA00C7153A2ECB0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F5FA00C9153A2ECB0089A1AD /* ScavengerTests.h */ = {isa = PBXFileReference; path = ScavengerTests.h; sourceTree = "<group>"; };
+		F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5FA0095153A2ECA0089A1AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FA009D153A2ECA0089A1AD /* UIKit.framework in Frameworks */,
+				F5FA009F153A2ECA0089A1AD /* Foundation.framework in Frameworks */,
+				F5FA00A1153A2ECA0089A1AD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5FA00B8153A2ECB0089A1AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FA00BE153A2ECB0089A1AD /* SenTestingKit.framework in Frameworks */,
+				F5FA00BF153A2ECB0089A1AD /* UIKit.framework in Frameworks */,
+				F5FA00C0153A2ECB0089A1AD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5FA008D153A2ECA0089A1AD = {
+			isa = PBXGroup;
+			children = (
+				F5FA00A2153A2ECA0089A1AD /* Scavenger */,
+				F5FA00C3153A2ECB0089A1AD /* ScavengerTests */,
+				F5FA009B153A2ECA0089A1AD /* Frameworks */,
+				F5FA0099153A2ECA0089A1AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5FA0099153A2ECA0089A1AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA0098153A2ECA0089A1AD /* Scavenger.app */,
+				F5FA00BC153A2ECB0089A1AD /* ScavengerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5FA009B153A2ECA0089A1AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA009C153A2ECA0089A1AD /* UIKit.framework */,
+				F5FA009E153A2ECA0089A1AD /* Foundation.framework */,
+				F5FA00A0153A2ECA0089A1AD /* CoreGraphics.framework */,
+				F5FA00BD153A2ECB0089A1AD /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5FA00A2153A2ECA0089A1AD /* Scavenger */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA00AB153A2ECA0089A1AD /* ScavengerAppDelegate.h */,
+				F5FA00AC153A2ECA0089A1AD /* ScavengerAppDelegate.m */,
+				F5FA00AE153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard */,
+				F5FA00B1153A2ECB0089A1AD /* MainStoryboard_iPad.storyboard */,
+				F5FA00B4153A2ECB0089A1AD /* ScavengerViewController.h */,
+				F5FA00B5153A2ECB0089A1AD /* ScavengerViewController.m */,
+				F5FA00A3153A2ECA0089A1AD /* Supporting Files */,
+			);
+			path = Scavenger;
+			sourceTree = "<group>";
+		};
+		F5FA00A3153A2ECA0089A1AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA00A4153A2ECA0089A1AD /* Scavenger-Info.plist */,
+				F5FA00A5153A2ECA0089A1AD /* InfoPlist.strings */,
+				F5FA00A8153A2ECA0089A1AD /* main.m */,
+				F5FA00AA153A2ECA0089A1AD /* Scavenger-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5FA00C3153A2ECB0089A1AD /* ScavengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA00C9153A2ECB0089A1AD /* ScavengerTests.h */,
+				F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */,
+				F5FA00C4153A2ECB0089A1AD /* Supporting Files */,
+			);
+			path = ScavengerTests;
+			sourceTree = "<group>";
+		};
+		F5FA00C4153A2ECB0089A1AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA00C5153A2ECB0089A1AD /* ScavengerTests-Info.plist */,
+				F5FA00C6153A2ECB0089A1AD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5FA0097153A2ECA0089A1AD /* Scavenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5FA00CE153A2ECB0089A1AD /* Build configuration list for PBXNativeTarget "Scavenger" */;
+			buildPhases = (
+				F5FA0094153A2ECA0089A1AD /* Sources */,
+				F5FA0095153A2ECA0089A1AD /* Frameworks */,
+				F5FA0096153A2ECA0089A1AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scavenger;
+			productName = Scavenger;
+			productReference = F5FA0098153A2ECA0089A1AD /* Scavenger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5FA00BB153A2ECB0089A1AD /* ScavengerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5FA00D1153A2ECB0089A1AD /* Build configuration list for PBXNativeTarget "ScavengerTests" */;
+			buildPhases = (
+				F5FA00B7153A2ECB0089A1AD /* Sources */,
+				F5FA00B8153A2ECB0089A1AD /* Frameworks */,
+				F5FA00B9153A2ECB0089A1AD /* Resources */,
+				F5FA00BA153A2ECB0089A1AD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5FA00C2153A2ECB0089A1AD /* PBXTargetDependency */,
+			);
+			name = ScavengerTests;
+			productName = ScavengerTests;
+			productReference = F5FA00BC153A2ECB0089A1AD /* ScavengerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5FA008F153A2ECA0089A1AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Scavenger;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Rolling Road Studios";
+			};
+			buildConfigurationList = F5FA0092153A2ECA0089A1AD /* Build configuration list for PBXProject "Scavenger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F5FA008D153A2ECA0089A1AD;
+			productRefGroup = F5FA0099153A2ECA0089A1AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5FA0097153A2ECA0089A1AD /* Scavenger */,
+				F5FA00BB153A2ECB0089A1AD /* ScavengerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5FA0096153A2ECA0089A1AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FA00A7153A2ECA0089A1AD /* InfoPlist.strings in Resources */,
+				F5FA00B0153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard in Resources */,
+				F5FA00B3153A2ECB0089A1AD /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5FA00B9153A2ECB0089A1AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FA00C8153A2ECB0089A1AD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F5FA00BA153A2ECB0089A1AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5FA0094153A2ECA0089A1AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FA00A9153A2ECA0089A1AD /* main.m in Sources */,
+				F5FA00AD153A2ECA0089A1AD /* ScavengerAppDelegate.m in Sources */,
+				F5FA00B6153A2ECB0089A1AD /* ScavengerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5FA00B7153A2ECB0089A1AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FA00CB153A2ECB0089A1AD /* ScavengerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5FA00C2153A2ECB0089A1AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5FA0097153A2ECA0089A1AD /* Scavenger */;
+			targetProxy = F5FA00C1153A2ECB0089A1AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5FA00A5153A2ECA0089A1AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5FA00A6153A2ECA0089A1AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F5FA00AE153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5FA00AF153A2ECB0089A1AD /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F5FA00B1153A2ECB0089A1AD /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5FA00B2153A2ECB0089A1AD /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F5FA00C6153A2ECB0089A1AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5FA00C7153A2ECB0089A1AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5FA00CC153A2ECB0089A1AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5FA00CD153A2ECB0089A1AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5FA00CF153A2ECB0089A1AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scavenger/Scavenger-Prefix.pch";
+				INFOPLIST_FILE = "Scavenger/Scavenger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F5FA00D0153A2ECB0089A1AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scavenger/Scavenger-Prefix.pch";
+				INFOPLIST_FILE = "Scavenger/Scavenger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F5FA00D2153A2ECB0089A1AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Scavenger.app/Scavenger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scavenger/Scavenger-Prefix.pch";
+				INFOPLIST_FILE = "ScavengerTests/ScavengerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F5FA00D3153A2ECB0089A1AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Scavenger.app/Scavenger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scavenger/Scavenger-Prefix.pch";
+				INFOPLIST_FILE = "ScavengerTests/ScavengerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5FA0092153A2ECA0089A1AD /* Build configuration list for PBXProject "Scavenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5FA00CC153A2ECB0089A1AD /* Debug */,
+				F5FA00CD153A2ECB0089A1AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5FA00CE153A2ECB0089A1AD /* Build configuration list for PBXNativeTarget "Scavenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5FA00CF153A2ECB0089A1AD /* Debug */,
+				F5FA00D0153A2ECB0089A1AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5FA00D1153A2ECB0089A1AD /* Build configuration list for PBXNativeTarget "ScavengerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5FA00D2153A2ECB0089A1AD /* Debug */,
+				F5FA00D3153A2ECB0089A1AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5FA008F153A2ECA0089A1AD /* Project object */;
+}
