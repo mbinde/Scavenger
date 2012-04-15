@@ -21,6 +21,7 @@
 		F5FA00C0153A2ECB0089A1AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009E153A2ECA0089A1AD /* Foundation.framework */; };
 		F5FA00C8153A2ECB0089A1AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5FA00C6153A2ECB0089A1AD /* InfoPlist.strings */; };
 		F5FA00CB153A2ECB0089A1AD /* ScavengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */; };
+		F5FA00D6153A36840089A1AD /* HuntTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00D5153A36840089A1AD /* HuntTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +39,24 @@
 		F5FA009C153A2ECA0089A1AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F5FA009E153A2ECA0089A1AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F5FA00A0153A2ECA0089A1AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F5FA00A4153A2ECA0089A1AD /* Scavenger-Info.plist */ = {isa = PBXFileReference; path = "Scavenger-Info.plist"; sourceTree = "<group>"; };
+		F5FA00A4153A2ECA0089A1AD /* Scavenger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Scavenger-Info.plist"; sourceTree = "<group>"; };
 		F5FA00A6153A2ECA0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F5FA00A8153A2ECA0089A1AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F5FA00AA153A2ECA0089A1AD /* Scavenger-Prefix.pch */ = {isa = PBXFileReference; path = "Scavenger-Prefix.pch"; sourceTree = "<group>"; };
-		F5FA00AB153A2ECA0089A1AD /* ScavengerAppDelegate.h */ = {isa = PBXFileReference; path = ScavengerAppDelegate.h; sourceTree = "<group>"; };
+		F5FA00AA153A2ECA0089A1AD /* Scavenger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scavenger-Prefix.pch"; sourceTree = "<group>"; };
+		F5FA00AB153A2ECA0089A1AD /* ScavengerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScavengerAppDelegate.h; sourceTree = "<group>"; };
 		F5FA00AC153A2ECA0089A1AD /* ScavengerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerAppDelegate.m; sourceTree = "<group>"; };
 		F5FA00AF153A2ECB0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		F5FA00B2153A2ECB0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		F5FA00B4153A2ECB0089A1AD /* ScavengerViewController.h */ = {isa = PBXFileReference; path = ScavengerViewController.h; sourceTree = "<group>"; };
+		F5FA00B4153A2ECB0089A1AD /* ScavengerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScavengerViewController.h; sourceTree = "<group>"; };
 		F5FA00B5153A2ECB0089A1AD /* ScavengerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerViewController.m; sourceTree = "<group>"; };
 		F5FA00BC153A2ECB0089A1AD /* ScavengerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScavengerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5FA00BD153A2ECB0089A1AD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F5FA00C5153A2ECB0089A1AD /* ScavengerTests-Info.plist */ = {isa = PBXFileReference; path = "ScavengerTests-Info.plist"; sourceTree = "<group>"; };
+		F5FA00C5153A2ECB0089A1AD /* ScavengerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScavengerTests-Info.plist"; sourceTree = "<group>"; };
 		F5FA00C7153A2ECB0089A1AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F5FA00C9153A2ECB0089A1AD /* ScavengerTests.h */ = {isa = PBXFileReference; path = ScavengerTests.h; sourceTree = "<group>"; };
+		F5FA00C9153A2ECB0089A1AD /* ScavengerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScavengerTests.h; sourceTree = "<group>"; };
 		F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerTests.m; sourceTree = "<group>"; };
+		F5FA00D4153A36840089A1AD /* HuntTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntTableViewController.h; sourceTree = "<group>"; };
+		F5FA00D5153A36840089A1AD /* HuntTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				F5FA00AB153A2ECA0089A1AD /* ScavengerAppDelegate.h */,
 				F5FA00AC153A2ECA0089A1AD /* ScavengerAppDelegate.m */,
 				F5FA00AE153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard */,
+				F5FA00D4153A36840089A1AD /* HuntTableViewController.h */,
+				F5FA00D5153A36840089A1AD /* HuntTableViewController.m */,
 				F5FA00B1153A2ECB0089A1AD /* MainStoryboard_iPad.storyboard */,
 				F5FA00B4153A2ECB0089A1AD /* ScavengerViewController.h */,
 				F5FA00B5153A2ECB0089A1AD /* ScavengerViewController.m */,
@@ -266,6 +271,7 @@
 				F5FA00A9153A2ECA0089A1AD /* main.m in Sources */,
 				F5FA00AD153A2ECA0089A1AD /* ScavengerAppDelegate.m in Sources */,
 				F5FA00B6153A2ECB0089A1AD /* ScavengerViewController.m in Sources */,
+				F5FA00D6153A36840089A1AD /* HuntTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
