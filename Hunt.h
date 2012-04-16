@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSArray *currentHuntItems;
 @property (strong, nonatomic) NSArray *foundHuntItems;
 
+@property (strong, nonatomic) NSNumber *huntSize;
+
 -(NSString *) itemForKey: (NSString *) key;
 
 @end

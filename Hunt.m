@@ -20,6 +20,7 @@
 @implementation Hunt
 
 @synthesize rngSeed = _rngSeed;
+@synthesize huntSize = _huntSize;
 @synthesize allHuntItems = _allHuntItems;
 @synthesize shuffledHuntItems = _shuffledHuntItems;
 @synthesize currentHuntItems = _currentHuntItems;
@@ -56,6 +57,7 @@
 -(id) initWithHuntSize: (int) size withSeed: (int) seed {
   self = [super init];
 
+  self.huntSize = [NSNumber numberWithInt: size];
   self.rngSeed = seed;
   [[self class] seedRNG:seed];
 
@@ -108,8 +110,12 @@
 
 -(NSArray *) currentHuntItems {
   if (! _currentHuntItems) {
-//    _currentHuntItems = [self.shuffledHuntItems subarrayWithRange:<#(NSRange)#>
-    // get the range of items based on our hunt size
+    NSRange range;
+    
+    range.location = 0;
+    range.length = [self.huntSize integerValue];
+    
+    _currentHuntItems = [self.shuffledHuntItems subarrayWithRange:range];
   }
   return _currentHuntItems;
 }
