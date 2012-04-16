@@ -25,6 +25,7 @@
 @synthesize numberOfItemsFound = _numberOfItemsFound;
 
 - (NSArray *) huntItems {
+  return self.hunt.currentHuntItems;
   if (! _huntItems) {
     _huntItems = [NSArray arrayWithObjects:
                   @"Tree", 

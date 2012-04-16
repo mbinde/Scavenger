@@ -28,19 +28,49 @@
 @synthesize startDateOfCurrentHuntingSession = _startDateOfCurrentHuntingSession;
 @synthesize cumulativeSecondsSpentHunting = _cumulativeSecondsSpentHunting;
 
+
+
++(void) seedRNG: (int) seed {
+  srandom(seed);  
+}
+
++(int) randomNumberWithMax: (int) max {
+  return random() % max;
+}
+
++(NSArray *) shuffleArray: (NSMutableArray *) givenArray {
+  // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+  int size = [givenArray count];
+
+  for (int i = size; i > 0; --i) {
+    int randomNumber = arc4random() % size;
+    [givenArray exchangeObjectAtIndex:(i-1) withObjectAtIndex:randomNumber];
+  }
+  
+  return givenArray;
+}
+
+
 // designated initializer
--(id) initWithSeed: (int) seed {
+-(id) initWithHuntSize: (int) size withSeed: (int) seed {
   self = [super init];
 
   self.rngSeed = seed;
-  srand(self.rngSeed);
+  [[self class] seedRNG:seed];
+
+//  int i = [[self class] randomNumberWithMax:20];
   
   return self;
 }
 
+-(id) initWithHuntSize: (int) size {
+  self = [self initWithHuntSize: size withSeed: [[NSDate date] timeIntervalSince1970]];
+  return self;
+}
+
 -(id) init {
-  self = [self initWithSeed: [[NSDate date] timeIntervalSince1970]];
-           
+  self = [self initWithHuntSize: 10];
+
   return self;
 }
 
@@ -69,6 +99,8 @@
 -(NSArray *) currentHuntItems {
   if (! _currentHuntItems) {
     // create them
+    NSArray *keys = [self.allHuntItems allKeys];
+    self.currentHuntItems = [[self class] shuffleArray:[keys mutableCopy]];
   }
   
   return _currentHuntItems;
