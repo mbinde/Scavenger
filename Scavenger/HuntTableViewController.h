@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hunt.h"
 
 @interface HuntTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) Hunt *hunt;
 
 @property (nonatomic, strong) NSArray *huntItems;
 @property (weak, nonatomic) IBOutlet UILabel *huntInformationHeader;

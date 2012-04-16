@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Hunt : NSObjec
+@interface Hunt : NSObject
 
 @property (strong, nonatomic) NSDictionary *allHuntItems;
 @property (strong, nonatomic) NSArray *currentHuntItems;

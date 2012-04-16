@@ -10,6 +10,7 @@
 
 @interface Hunt ()
 
+@property (nonatomic) int rngSeed;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDateOfCurrentHuntingSession;
 @property (nonatomic) int cumulativeSecondsSpentHunting;
@@ -18,6 +19,7 @@
 
 @implementation Hunt
 
+@synthesize rngSeed = _rngSeed;
 @synthesize allHuntItems = _allHuntItems;
 @synthesize currentHuntItems = _currentHuntItems;
 @synthesize foundHuntItems = _foundHuntItems;
@@ -25,6 +27,23 @@
 @synthesize timer = _timer;
 @synthesize startDateOfCurrentHuntingSession = _startDateOfCurrentHuntingSession;
 @synthesize cumulativeSecondsSpentHunting = _cumulativeSecondsSpentHunting;
+
+// designated initializer
+-(id) initWithSeed: (int) seed {
+  self = [super init];
+
+  self.rngSeed = seed;
+  srand(self.rngSeed);
+  
+  return self;
+}
+
+-(id) init {
+  self = [self initWithSeed: [[NSDate date] timeIntervalSince1970]];
+           
+  return self;
+}
+
 
 
 -(NSDictionary *) allHuntItems {
@@ -45,6 +64,25 @@
                      nil];
   }
   return _allHuntItems;
+}
+
+-(NSArray *) currentHuntItems {
+  if (! _currentHuntItems) {
+    // create them
+  }
+  
+  return _currentHuntItems;
+}
+
+-(void) toggleFoundStatusForHuntItem: (NSString *)key {
+  if ([self.foundHuntItems indexOfObject:key]) {
+    NSMutableArray *newItemsList = [self.foundHuntItems mutableCopy];
+    [newItemsList removeObject: key];
+    self.foundHuntItems = newItemsList;
+  }
+  else {
+    self.foundHuntItems = [self.foundHuntItems arrayByAddingObject:key];
+  }
 }
 
 

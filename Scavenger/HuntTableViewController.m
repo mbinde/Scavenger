@@ -18,6 +18,8 @@
 
 @implementation HuntTableViewController
 
+@synthesize hunt = _hunt;
+
 @synthesize huntItems = _huntItems;
 @synthesize huntInformationHeader = _huntInformationHeader;
 @synthesize numberOfItemsFound = _numberOfItemsFound;
@@ -66,6 +68,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+  self.hunt = [[Hunt alloc] init];
   self.numberOfItemsFound = 0;
   [self updateItemsFound];
 }
