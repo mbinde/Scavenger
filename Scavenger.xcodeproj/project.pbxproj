@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F58C3591153BB4D800765AE0 /* Hunt.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C3590153BB4D800765AE0 /* Hunt.m */; };
 		F5FA009D153A2ECA0089A1AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009C153A2ECA0089A1AD /* UIKit.framework */; };
 		F5FA009F153A2ECA0089A1AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009E153A2ECA0089A1AD /* Foundation.framework */; };
 		F5FA00A1153A2ECA0089A1AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA00A0153A2ECA0089A1AD /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F58C358F153BB4D800765AE0 /* Hunt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hunt.h; path = ../Hunt.h; sourceTree = "<group>"; };
+		F58C3590153BB4D800765AE0 /* Hunt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hunt.m; path = ../Hunt.m; sourceTree = "<group>"; };
 		F5FA0098153A2ECA0089A1AD /* Scavenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scavenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5FA009C153A2ECA0089A1AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F5FA009E153A2ECA0089A1AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +119,8 @@
 		F5FA00A2153A2ECA0089A1AD /* Scavenger */ = {
 			isa = PBXGroup;
 			children = (
+				F58C358F153BB4D800765AE0 /* Hunt.h */,
+				F58C3590153BB4D800765AE0 /* Hunt.m */,
 				F5FA00AB153A2ECA0089A1AD /* ScavengerAppDelegate.h */,
 				F5FA00AC153A2ECA0089A1AD /* ScavengerAppDelegate.m */,
 				F5FA00AE153A2ECB0089A1AD /* MainStoryboard_iPhone.storyboard */,
@@ -272,6 +277,7 @@
 				F5FA00AD153A2ECA0089A1AD /* ScavengerAppDelegate.m in Sources */,
 				F5FA00B6153A2ECB0089A1AD /* ScavengerViewController.m in Sources */,
 				F5FA00D6153A36840089A1AD /* HuntTableViewController.m in Sources */,
+				F58C3591153BB4D800765AE0 /* Hunt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +457,7 @@
 				F5FA00D0153A2ECB0089A1AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5FA00D1153A2ECB0089A1AD /* Build configuration list for PBXNativeTarget "ScavengerTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +466,7 @@
 				F5FA00D3153A2ECB0089A1AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
