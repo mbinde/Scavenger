@@ -114,7 +114,10 @@
   }
   
   // Configure the cell.
-  cell.textLabel.text = [self.huntItems objectAtIndex: [indexPath row]];
+//  cell.textLabel.text = [self.huntItems objectAtIndex: [indexPath row]];
+  NSString *key = [self.hunt.currentHuntItems objectAtIndex: [indexPath row]];
+  cell.textLabel.text = [self.hunt itemForKey:key];
+
   return cell;
 } 
 

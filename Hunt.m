@@ -21,6 +21,7 @@
 
 @synthesize rngSeed = _rngSeed;
 @synthesize allHuntItems = _allHuntItems;
+@synthesize shuffledHuntItems = _shuffledHuntItems;
 @synthesize currentHuntItems = _currentHuntItems;
 @synthesize foundHuntItems = _foundHuntItems;
 
@@ -58,8 +59,6 @@
   self.rngSeed = seed;
   [[self class] seedRNG:seed];
 
-//  int i = [[self class] randomNumberWithMax:20];
-  
   return self;
 }
 
@@ -79,31 +78,44 @@
 -(NSDictionary *) allHuntItems {
   if (! _allHuntItems) {
     _allHuntItems = [NSDictionary dictionaryWithObjectsAndKeys:
-                     @"Tree", @"1",
-                     @"House", @"2",
-                     @"Horse", @"3",
+                     @"Tree", @"0",
+                     @"Blanket", @"1",
+                     @"RV", @"2",
+                     @"F250", @"3",
                      @"Cat", @"4",
                      @"Melissa", @"5",
-                     @"Seth", @"6",
-                     @"Tree1", @"7",
-                     @"House1", @"8",
-                     @"Horse1", @"9",
-                     @"Cat1", @"10",
-                     @"Melissa1", @"11",
-                     @"Seth1", @"12",
+                     @"Laptop", @"6",
+                     @"RAID Drive", @"7",
+                     @"Water Hose", @"8",
+                     @"Wheel Chock", @"9",
+                     @"Keys", @"10",
+                     @"Headphones", @"11",
+                     @"iPad", @"12",
+                     @"Board Game", @"13",
+                     @"Pillow", @"14",
                      nil];
   }
   return _allHuntItems;
 }
 
+-(NSArray *) shuffledHuntItems {
+  if (! _shuffledHuntItems) {
+    NSArray *keys = [self.allHuntItems allKeys];
+    _shuffledHuntItems = [[self class] shuffleArray:[keys mutableCopy]];
+  }
+  return _shuffledHuntItems;
+}
+
 -(NSArray *) currentHuntItems {
   if (! _currentHuntItems) {
-    // create them
-    NSArray *keys = [self.allHuntItems allKeys];
-    self.currentHuntItems = [[self class] shuffleArray:[keys mutableCopy]];
+//    _currentHuntItems = [self.shuffledHuntItems subarrayWithRange:<#(NSRange)#>
+    // get the range of items based on our hunt size
   }
-  
   return _currentHuntItems;
+}
+
+-(NSString *) itemForKey: (NSString *) key {
+  return [self.allHuntItems objectForKey:key];
 }
 
 -(void) toggleFoundStatusForHuntItem: (NSString *)key {
