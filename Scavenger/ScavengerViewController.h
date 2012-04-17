@@ -10,4 +10,9 @@
 
 @interface ScavengerViewController : UIViewController
 
+#define HUNT_TAG_RV @"1"
+#define HUNT_TAG_PARK @"2"
+#define HUNT_TAG_GROCERY @"3"
+#define HUNT_TAG_OFFICE @"4"
+
 @end

@@ -35,4 +35,15 @@
   }
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
+{
+  if ([segue.identifier isEqualToString:@"Start Hunt"]) {
+    NSLog(@"In Segue");
+    NSLog(@"Segue Tag: %d", sender.tag);
+    NSLog(@"Identifier: %@", segue.identifier);
+//    [segue.destinationViewController setDelegate:self];
+  }
+}
+
 @end

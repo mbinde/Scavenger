@@ -19,9 +19,8 @@
 @implementation HuntTableViewController
 
 @synthesize hunt = _hunt;
-
-
 @synthesize huntInformationHeader = _huntInformationHeader;
+
 
 - (void)updateItemsFound {
   
