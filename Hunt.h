@@ -18,5 +18,7 @@
 @property (strong, nonatomic) NSNumber *huntSize;
 
 -(NSString *) itemForKey: (NSString *) key;
+-(void) toggleFoundStatusForHuntItem: (NSString *)key;
+-(BOOL) huntItemHasBeenFound: (NSString *)key;
 
 @end

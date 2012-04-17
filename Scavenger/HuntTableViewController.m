@@ -20,57 +20,33 @@
 
 @synthesize hunt = _hunt;
 
-@synthesize huntItems = _huntItems;
-@synthesize huntInformationHeader = _huntInformationHeader;
-@synthesize numberOfItemsFound = _numberOfItemsFound;
 
-- (NSArray *) huntItems {
-  return self.hunt.currentHuntItems;
-  if (! _huntItems) {
-    _huntItems = [NSArray arrayWithObjects:
-                  @"Tree", 
-                  @"House",
-                  @"Horse",
-                  @"Cat",
-                  @"Melissa",
-                  @"Seth", 
-                  @"Tree1", 
-                  @"House1",
-                  @"Horse1",
-                  @"Cat1",
-                  @"Melissa1",
-                  @"Seth1", 
-                  nil];
-  }
-  return _huntItems;
-}
+@synthesize huntInformationHeader = _huntInformationHeader;
 
 - (void)updateItemsFound {
   
   NSString *message = nil;
   
-  if (! self.numberOfItemsFound) {
-    self.numberOfItemsFound = 0;
-  }
-  if (self.numberOfItemsFound == [self.huntItems count]) {
+  int count = [self.hunt.foundHuntItems count];
+
+  if (count == [self.hunt.currentHuntItems count]) {
     message = @"Good work, you found them all!";
   }
-  else if (self.numberOfItemsFound >= ([self.huntItems count] * .8)) {
+  else if (count >= ([self.hunt.currentHuntItems count] * .8)) {
     message = @"Items Found: %d/%d ... almost done!";
   }
   else {
     message = @"Items Found: %d/%d";
   }
   self.huntInformationHeader.text = [NSString stringWithFormat:message,
-                                     self.numberOfItemsFound,
-                                     [self.huntItems count]];
+                                     count,
+                                     [self.hunt.currentHuntItems count]];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
   self.hunt = [[Hunt alloc] init];
-  self.numberOfItemsFound = 0;
   [self updateItemsFound];
 }
 
@@ -78,7 +54,6 @@
   [self setHuntInformationHeader:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
-  self.huntItems = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -98,7 +73,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.huntItems count];
+  return [self.hunt.currentHuntItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,8 +88,6 @@
             reuseIdentifier:CellIdentifier];
   }
   
-  // Configure the cell.
-//  cell.textLabel.text = [self.huntItems objectAtIndex: [indexPath row]];
   NSString *key = [self.hunt.currentHuntItems objectAtIndex: [indexPath row]];
   cell.textLabel.text = [self.hunt itemForKey:key];
 
@@ -124,24 +97,29 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-  if (cell.accessoryType == UITableViewCellAccessoryNone) {
+  NSString *key = [self.hunt.currentHuntItems objectAtIndex: [indexPath row]];
+  
+  if ([self.hunt huntItemHasBeenFound:key]) {
+    // was found before, so remove it from the list
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.textLabel.textColor = [UIColor blackColor];
+  }
+  else {
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     cell.textLabel.textColor = [UIColor colorWithRed:0.7f
                                                green:0.7f
                                                 blue:0.7f 
                                                alpha:1.0f];
-    self.numberOfItemsFound++;
   }
-  else {
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.textLabel.textColor = [UIColor blackColor];
-    self.numberOfItemsFound--;
-  }
+  [self.hunt toggleFoundStatusForHuntItem: key];
   [self updateItemsFound];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+  
+  NSString *key = [self.hunt.currentHuntItems objectAtIndex: [indexPath row]];
+  
+  if ([self.hunt huntItemHasBeenFound:key]) {
     cell.textLabel.textColor = [UIColor colorWithRed:0.7f
                                                green:0.7f
                                                 blue:0.7f 

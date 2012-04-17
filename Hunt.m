@@ -52,6 +52,18 @@
   return givenArray;
 }
 
+-(void) setFoundHuntItems: (NSArray *) array {
+  if (_foundHuntItems != array) {
+    _foundHuntItems = array;
+  }
+}
+-(NSArray *) foundHuntItems {
+  if (! _foundHuntItems) {
+    _foundHuntItems = [[NSArray alloc] init ];
+  }
+  return _foundHuntItems;
+}
+
 
 // designated initializer
 -(id) initWithHuntSize: (int) size withSeed: (int) seed {
@@ -82,7 +94,7 @@
     _allHuntItems = [NSDictionary dictionaryWithObjectsAndKeys:
                      @"Tree", @"0",
                      @"Blanket", @"1",
-                     @"RV", @"2",
+                     @"Seth", @"2",
                      @"F250", @"3",
                      @"Cat", @"4",
                      @"Melissa", @"5",
@@ -111,10 +123,8 @@
 -(NSArray *) currentHuntItems {
   if (! _currentHuntItems) {
     NSRange range;
-    
     range.location = 0;
     range.length = [self.huntSize integerValue];
-    
     _currentHuntItems = [self.shuffledHuntItems subarrayWithRange:range];
   }
   return _currentHuntItems;
@@ -125,16 +135,27 @@
 }
 
 -(void) toggleFoundStatusForHuntItem: (NSString *)key {
-  if ([self.foundHuntItems indexOfObject:key]) {
+  
+  if ([self huntItemHasBeenFound:key]) {
+    NSLog(@"%@ Already exists; removing", key);
     NSMutableArray *newItemsList = [self.foundHuntItems mutableCopy];
     [newItemsList removeObject: key];
     self.foundHuntItems = newItemsList;
   }
   else {
+    NSLog(@"Adding %@", key);
     self.foundHuntItems = [self.foundHuntItems arrayByAddingObject:key];
   }
 }
 
+-(BOOL) huntItemHasBeenFound: (NSString *)key {
+  if ([self.foundHuntItems indexOfObject:key] != NSNotFound) {
+    return YES;
+  }
+  else {
+    return NO;
+  }
+}
 
 
 
