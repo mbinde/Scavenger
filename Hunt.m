@@ -32,13 +32,7 @@
 
 
 
-+(void) seedRNG: (int) seed {
-  srandom(seed);  
-}
-
-+(int) randomNumberWithMax: (int) max {
-  return random() % max;
-}
+#pragma mark - Class Methods
 
 +(NSArray *) shuffleArray: (NSMutableArray *) givenArray {
   // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
@@ -52,6 +46,9 @@
   return givenArray;
 }
 
+
+#pragma mark - Accessors
+
 -(void) setFoundHuntItems: (NSArray *) array {
   if (_foundHuntItems != array) {
     _foundHuntItems = array;
@@ -63,31 +60,6 @@
   }
   return _foundHuntItems;
 }
-
-
-// designated initializer
--(id) initWithHuntSize: (int) size withSeed: (int) seed {
-  self = [super init];
-
-  self.huntSize = [NSNumber numberWithInt: size];
-  self.rngSeed = seed;
-  [[self class] seedRNG:seed];
-
-  return self;
-}
-
--(id) initWithHuntSize: (int) size {
-  self = [self initWithHuntSize: size withSeed: [[NSDate date] timeIntervalSince1970]];
-  return self;
-}
-
--(id) init {
-  self = [self initWithHuntSize: 10];
-
-  return self;
-}
-
-
 
 -(NSDictionary *) allHuntItems {
   if (! _allHuntItems) {
@@ -130,6 +102,33 @@
   return _currentHuntItems;
 }
 
+
+#pragma mark - Initializers
+
+// designated initializer
+-(id) initWithHuntSize: (int) size withSeed: (int) seed {
+  self = [super init];
+
+  self.huntSize = [NSNumber numberWithInt: size];
+  self.rngSeed = seed;
+  srandom(seed);
+
+  return self;
+}
+
+-(id) initWithHuntSize: (int) size {
+  self = [self initWithHuntSize: size withSeed: [[NSDate date] timeIntervalSince1970]];
+  return self;
+}
+
+-(id) init {
+  self = [self initWithHuntSize: 10];
+
+  return self;
+}
+
+#pragma mark - Item manipulation
+
 -(NSString *) itemForKey: (NSString *) key {
   return [self.allHuntItems objectForKey:key];
 }
@@ -156,6 +155,10 @@
     return NO;
   }
 }
+
+
+#pragma mark - Hunt definitions
+
 
 
 
