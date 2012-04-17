@@ -21,4 +21,7 @@
 -(void) toggleFoundStatusForHuntItem: (NSString *)key;
 -(BOOL) huntItemHasBeenFound: (NSString *)key;
 
++(NSString *) randomHuntID;
++(NSString *) randomHuntSize;
+
 @end

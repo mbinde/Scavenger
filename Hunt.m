@@ -8,6 +8,7 @@
 
 #import "Hunt.h"
 
+
 @interface Hunt ()
 
 @property (nonatomic) int rngSeed;
@@ -15,7 +16,11 @@
 @property (strong, nonatomic) NSDate *startDateOfCurrentHuntingSession;
 @property (nonatomic) int cumulativeSecondsSpentHunting;
 
++(NSDictionary *) itemsForHuntID: (int) huntID;
 @end
+
+
+
 
 @implementation Hunt
 
@@ -32,6 +37,7 @@
 
 
 
+
 #pragma mark - Class Methods
 
 +(NSArray *) shuffleArray: (NSMutableArray *) givenArray {
@@ -44,6 +50,18 @@
   }
   
   return givenArray;
+}
+
++(NSString *) randomHuntID {
+  NSArray *validHuntIDs = [self validHuntIDs];
+  int randomNumber = arc4random() % [validHuntIDs count];
+  return [validHuntIDs objectAtIndex: randomNumber];
+}
+
++(NSString *) randomHuntSize {
+  NSArray *validHuntSizes = [self validHuntSizes];
+  int randomNumber = arc4random() % [validHuntSizes count];
+  return [validHuntSizes objectAtIndex: randomNumber];
 }
 
 
@@ -62,24 +80,8 @@
 }
 
 -(NSDictionary *) allHuntItems {
-  if (! _allHuntItems) {
-    _allHuntItems = [NSDictionary dictionaryWithObjectsAndKeys:
-                     @"Tree", @"0",
-                     @"Blanket", @"1",
-                     @"Seth", @"2",
-                     @"F250", @"3",
-                     @"Cat", @"4",
-                     @"Melissa", @"5",
-                     @"Laptop", @"6",
-                     @"RAID Drive", @"7",
-                     @"Water Hose", @"8",
-                     @"Wheel Chock", @"9",
-                     @"Keys", @"10",
-                     @"Headphones", @"11",
-                     @"iPad", @"12",
-                     @"Board Game", @"13",
-                     @"Pillow", @"14",
-                     nil];
+  if (!_allHuntItems) {
+    _allHuntItems = [[NSDictionary alloc] init];
   }
   return _allHuntItems;
 }
@@ -111,6 +113,7 @@
 
   self.huntSize = [NSNumber numberWithInt: size];
   self.rngSeed = seed;
+  
   srandom(seed);
 
   return self;
@@ -158,6 +161,51 @@
 
 
 #pragma mark - Hunt definitions
+
+
+// write tests for this that gets the number of locations, checks each to make sure they return something, then checks N+1 to make sure it returns nil
+
++(NSArray *) validHuntIDs {
+  return [NSArray arrayWithObjects: 
+          @"1", 
+          nil];
+}
+
++(NSArray *) validHuntSizes {
+  return [NSArray arrayWithObjects: 
+          @"5", 
+          @"10",
+          nil];
+}
+
++(NSDictionary *) itemsForHuntID: (int) huntID {
+  NSDictionary *items = nil;
+  
+  switch (huntID) {
+    case 1:
+      items = [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"Tree", @"0",
+                       @"Blanket", @"1",
+                       @"Seth", @"2",
+                       @"F250", @"3",
+                       @"Cat", @"4",
+                       @"Melissa", @"5",
+                       @"Laptop", @"6",
+                       @"RAID Drive", @"7",
+                       @"Water Hose", @"8",
+                       @"Wheel Chock", @"9",
+                       @"Keys", @"10",
+                       @"Headphones", @"11",
+                       @"iPad", @"12",
+                       @"Board Game", @"13",
+                       @"Pillow", @"14",
+                       nil];
+    default:
+      items = nil;
+  }
+
+  return items;
+}
 
 
 
