@@ -42,6 +42,9 @@
   if ([segue.identifier hasPrefix:@"Start Hunt"]) {    
     [segue.destinationViewController setHuntID: [NSNumber numberWithInt: sender.tag]];
   }
+  if ([segue.identifier hasPrefix:@"Setup Hunt"]) {    
+    NSLog(@"Setup segue");
+  }
 }
 
 @end

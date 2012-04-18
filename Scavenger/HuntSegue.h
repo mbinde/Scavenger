@@ -10,6 +10,4 @@
 
 @interface HuntSegue : UIStoryboardSegue
 
-- (void) perform;
-
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HuntSegue.h"
 
 @interface ScavengerViewController : UIViewController
 
