@@ -7,6 +7,7 @@
 //
 
 #import "HuntTableViewController.h"
+#import "Hunt.h"
 
 @interface HuntTableViewController ()
 -(void) updateItemsFound;
@@ -18,6 +19,7 @@
 
 @implementation HuntTableViewController
 
+@synthesize huntID = _huntID;
 @synthesize hunt = _hunt;
 @synthesize huntInformationHeader = _huntInformationHeader;
 
@@ -45,7 +47,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-  self.hunt = [[Hunt alloc] init];
+  self.hunt = [[Hunt alloc] initWithHuntID: self.huntID];
   [self updateItemsFound];
 }
 

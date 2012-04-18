@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSDate *startDateOfCurrentHuntingSession;
 @property (nonatomic) int cumulativeSecondsSpentHunting;
 
-+(NSDictionary *) itemsForHuntID: (int) huntID;
++(NSDictionary *) itemsForHuntID: (NSNumber *) huntID;
 @end
 
 
@@ -26,6 +26,8 @@
 
 @synthesize rngSeed = _rngSeed;
 @synthesize huntSize = _huntSize;
+@synthesize huntID = _huntID;
+
 @synthesize allHuntItems = _allHuntItems;
 @synthesize shuffledHuntItems = _shuffledHuntItems;
 @synthesize currentHuntItems = _currentHuntItems;
@@ -52,13 +54,13 @@
   return givenArray;
 }
 
-+(NSString *) randomHuntID {
++(NSNumber *) randomHuntID {
   NSArray *validHuntIDs = [self validHuntIDs];
   int randomNumber = arc4random() % [validHuntIDs count];
   return [validHuntIDs objectAtIndex: randomNumber];
 }
 
-+(NSString *) randomHuntSize {
++(NSNumber *) randomHuntSize {
   NSArray *validHuntSizes = [self validHuntSizes];
   int randomNumber = arc4random() % [validHuntSizes count];
   return [validHuntSizes objectAtIndex: randomNumber];
@@ -81,7 +83,7 @@
 
 -(NSDictionary *) allHuntItems {
   if (!_allHuntItems) {
-    _allHuntItems = [[NSDictionary alloc] init];
+    _allHuntItems = [[self class] itemsForHuntID: self.huntID];
   }
   return _allHuntItems;
 }
@@ -108,10 +110,11 @@
 #pragma mark - Initializers
 
 // designated initializer
--(id) initWithHuntSize: (int) size withSeed: (int) seed {
+-(id) initWithHuntSize: (NSNumber *) size withHuntID: (NSNumber *) huntID withSeed: (int) seed {
   self = [super init];
 
-  self.huntSize = [NSNumber numberWithInt: size];
+  self.huntSize = size;
+  self.huntID = huntID;
   self.rngSeed = seed;
   
   srandom(seed);
@@ -119,13 +122,26 @@
   return self;
 }
 
--(id) initWithHuntSize: (int) size {
-  self = [self initWithHuntSize: size withSeed: [[NSDate date] timeIntervalSince1970]];
+-(id) initWithHuntSize: (NSNumber *) size withHuntID: (NSNumber *) huntID {
+  self = [self initWithHuntSize: size 
+                     withHuntID: huntID
+                       withSeed: [[NSDate date] timeIntervalSince1970]
+          ];
   return self;
 }
 
+-(id) initWithHuntID: (NSNumber *) huntID {
+  self = [self initWithHuntSize: [[self class] randomHuntSize]
+                     withHuntID: huntID
+          ];
+  return self;
+}
+
+
 -(id) init {
-  self = [self initWithHuntSize: 10];
+  self = [self initWithHuntSize: [[self class] randomHuntSize]
+                     withHuntID: [[self class] randomHuntID]
+          ];
 
   return self;
 }
@@ -139,13 +155,11 @@
 -(void) toggleFoundStatusForHuntItem: (NSString *)key {
   
   if ([self huntItemHasBeenFound:key]) {
-    NSLog(@"%@ Already exists; removing", key);
     NSMutableArray *newItemsList = [self.foundHuntItems mutableCopy];
     [newItemsList removeObject: key];
     self.foundHuntItems = newItemsList;
   }
   else {
-    NSLog(@"Adding %@", key);
     self.foundHuntItems = [self.foundHuntItems arrayByAddingObject:key];
   }
 }
@@ -167,41 +181,60 @@
 
 +(NSArray *) validHuntIDs {
   return [NSArray arrayWithObjects: 
-          @"1", 
+          [NSNumber numberWithInteger: 1], 
           nil];
 }
 
 +(NSArray *) validHuntSizes {
   return [NSArray arrayWithObjects: 
-          @"5", 
-          @"10",
+          [NSNumber numberWithInteger: 5], 
+          [NSNumber numberWithInteger: 10], 
           nil];
 }
 
-+(NSDictionary *) itemsForHuntID: (int) huntID {
++(NSDictionary *) itemsForHuntID: (NSNumber *) huntID {
   NSDictionary *items = nil;
   
-  switch (huntID) {
-    case 1:
+  switch ([huntID integerValue]) {
+    case 1: // RV
       items = [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"Tree", @"0",
-                       @"Blanket", @"1",
-                       @"Seth", @"2",
-                       @"F250", @"3",
-                       @"Cat", @"4",
-                       @"Melissa", @"5",
-                       @"Laptop", @"6",
-                       @"RAID Drive", @"7",
-                       @"Water Hose", @"8",
-                       @"Wheel Chock", @"9",
-                       @"Keys", @"10",
-                       @"Headphones", @"11",
-                       @"iPad", @"12",
-                       @"Board Game", @"13",
-                       @"Pillow", @"14",
-                       nil];
+               @"Tree", @"0",
+               @"Blanket", @"1",
+               @"Seth", @"2",
+               @"F250", @"3",
+               @"Cat", @"4",
+               @"Melissa", @"5",
+               @"Laptop", @"6",
+               @"RAID Drive", @"7",
+               @"Water Hose", @"8",
+               @"Wheel Chock", @"9",
+               @"Keys", @"10",
+               @"Headphones", @"11",
+               @"iPad", @"12",
+               @"Board Game", @"13",
+               @"Pillow", @"14",
+               nil];
+      break;
+    case 2: // Park
+      items = [NSDictionary dictionaryWithObjectsAndKeys:
+               @"Tree", @"0",
+               @"Branch", @"1",
+               @"Moss", @"2",
+               @"Seth", @"3",
+               @"Melissa", @"4",
+               @"Not Yopa", @"5",
+               @"Leaves", @"6",
+               @"Trail", @"7",
+               @"Creek", @"8",
+               @"Blue Sky", @"9",
+               @"Nurse Log", @"10",
+               @"Conifer", @"11",
+               @"Dirt", @"12",
+               nil];
+      break;
     default:
       items = nil;
+      break;
   }
 
   return items;

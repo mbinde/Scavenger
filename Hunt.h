@@ -16,12 +16,19 @@
 @property (strong, nonatomic) NSArray *foundHuntItems;
 
 @property (strong, nonatomic) NSNumber *huntSize;
+@property (strong, nonatomic) NSNumber *huntID;
+
+-(id) initWithHuntSize: (NSNumber *) size withHuntID: (NSNumber *) huntID withSeed: (int) seed; // designated initializer
+-(id) initWithHuntSize: (NSNumber *) size withHuntID: (NSNumber *) huntID;
+-(id) initWithHuntID: (NSNumber *) huntID;
+-(id) init;
+
 
 -(NSString *) itemForKey: (NSString *) key;
 -(void) toggleFoundStatusForHuntItem: (NSString *)key;
 -(BOOL) huntItemHasBeenFound: (NSString *)key;
 
-+(NSString *) randomHuntID;
-+(NSString *) randomHuntSize;
++(NSNumber *) randomHuntID;
++(NSNumber *) randomHuntSize;
 
 @end
