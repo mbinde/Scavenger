@@ -14,6 +14,33 @@
 
 @implementation HuntOptionsScavengerViewController
 
+@synthesize huntID = _huntID;
+@synthesize timerSetting = _timerSetting;
+
+-(BOOL) timerSetting {
+  if (! _timerSetting) {
+    _timerSetting = NO;
+  }
+  return _timerSetting;
+}
+
+- (IBAction)timerToggle:(UISwitch *)sender {
+  if (sender.on) {
+    self.timerSetting = YES;
+  }
+  else {
+    self.timerSetting = NO;
+  }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
+{
+  if ([segue.identifier hasPrefix:@"Start Hunt"]) {    
+    [segue.destinationViewController setHuntID: self.huntID];
+    [segue.destinationViewController setTimerSetting: self.timerSetting];
+  }
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

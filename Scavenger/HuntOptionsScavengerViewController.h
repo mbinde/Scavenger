@@ -10,4 +10,7 @@
 
 @interface HuntOptionsScavengerViewController : UIViewController
 
+@property (strong, nonatomic) NSNumber *huntID;
+@property (nonatomic) BOOL timerSetting;
+
 @end

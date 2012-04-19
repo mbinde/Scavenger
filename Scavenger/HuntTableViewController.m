@@ -20,6 +20,7 @@
 @implementation HuntTableViewController
 
 @synthesize huntID = _huntID;
+@synthesize timerSetting = _timerSetting;
 @synthesize hunt = _hunt;
 @synthesize huntInformationHeader = _huntInformationHeader;
 
@@ -41,12 +42,10 @@
   if (count == [self.hunt.currentHuntItems count]) {
     message = @"Good work, you found them all!";
   }
-  else if (count >= ([self.hunt.currentHuntItems count] * .8)) {
-    message = @"Items Found: %d/%d ... almost done!";
-  }
   else {
-    message = @"Items Found: %d/%d";
+    message = @"Progress: %d/%d";
   }
+
   self.huntInformationHeader.text = [NSString stringWithFormat:message,
                                      count,
                                      [self.hunt.currentHuntItems count]];

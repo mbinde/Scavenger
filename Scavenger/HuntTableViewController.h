@@ -12,6 +12,7 @@
 @interface HuntTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSNumber *huntID;
+@property (nonatomic) BOOL timerSetting;
 @property (strong, nonatomic) Hunt *hunt;
 @property (weak, nonatomic) IBOutlet UILabel *huntInformationHeader;
 
