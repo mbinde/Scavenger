@@ -9,19 +9,37 @@
 #import "HuntOptionsScavengerViewController.h"
 
 @interface HuntOptionsScavengerViewController ()
-
 @end
 
 @implementation HuntOptionsScavengerViewController
 
 @synthesize huntID = _huntID;
+@synthesize huntSize = _huntSize;
 @synthesize timerSetting = _timerSetting;
+@synthesize huntSizeLabel = _huntSizeLabel;
+
+
+-(NSNumber *) huntSize {
+  if (! _huntSize) {
+    _huntSize = [NSNumber numberWithInt: 10];
+  }
+  return _huntSize;
+}
+
+-(void) updateHuntSizeLabel {
+  self.huntSizeLabel.text = [NSString stringWithFormat: @"Hunt Size: %d", [self.huntSize integerValue]];
+}
 
 -(BOOL) timerSetting {
   if (! _timerSetting) {
     _timerSetting = NO;
   }
   return _timerSetting;
+}
+
+- (IBAction)huntSizeSlider:(UISlider *)sender {
+  self.huntSize = [NSNumber numberWithInt: (int) roundf(sender.value)];
+  [self updateHuntSizeLabel];
 }
 
 - (IBAction)timerToggle:(UISwitch *)sender {
@@ -38,6 +56,7 @@
   if ([segue.identifier hasPrefix:@"Start Hunt"]) {    
     [segue.destinationViewController setHuntID: self.huntID];
     [segue.destinationViewController setTimerSetting: self.timerSetting];
+    [segue.destinationViewController setHuntSize: self.huntSize];
   }
 }
 
@@ -55,10 +74,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+  [self updateHuntSizeLabel];
 }
 
 - (void)viewDidUnload
 {
+  [self setHuntSizeLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

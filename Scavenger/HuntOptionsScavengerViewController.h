@@ -11,6 +11,8 @@
 @interface HuntOptionsScavengerViewController : UIViewController
 
 @property (strong, nonatomic) NSNumber *huntID;
+@property (strong, nonatomic) NSNumber *huntSize;
 @property (nonatomic) BOOL timerSetting;
+@property (weak, nonatomic) IBOutlet UILabel *huntSizeLabel;
 
 @end

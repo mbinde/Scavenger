@@ -20,6 +20,7 @@
 @implementation HuntTableViewController
 
 @synthesize huntID = _huntID;
+@synthesize huntSize = _huntSize;
 @synthesize timerSetting = _timerSetting;
 @synthesize hunt = _hunt;
 @synthesize huntInformationHeader = _huntInformationHeader;
@@ -54,7 +55,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-  self.hunt = [[Hunt alloc] initWithHuntID: self.huntID];
+  self.hunt = [[Hunt alloc] initWithHuntSize: self.huntSize
+                                  withHuntID: self.huntID];
   [self updateItemsFound];
 }
 
