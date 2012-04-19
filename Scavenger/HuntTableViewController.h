@@ -16,5 +16,6 @@
 @property (nonatomic) BOOL timerSetting;
 @property (strong, nonatomic) Hunt *hunt;
 @property (weak, nonatomic) IBOutlet UILabel *huntInformationHeader;
+@property (weak, nonatomic) IBOutlet UIProgressView *huntProgressBar;
 
 @end

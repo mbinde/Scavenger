@@ -24,6 +24,7 @@
 @synthesize timerSetting = _timerSetting;
 @synthesize hunt = _hunt;
 @synthesize huntInformationHeader = _huntInformationHeader;
+@synthesize huntProgressBar = _huntProgressBar;
 
 
 
@@ -39,12 +40,21 @@
   NSString *message = nil;
   
   int count = [self.hunt.foundHuntItems count];
+  
+  float progressPercentage;
+  if ((count == 0) || ([self.hunt.currentHuntItems count] == 0)) {
+    progressPercentage = 0.0;
+  }
+  else {
+    progressPercentage = (float) count / (float) [self.hunt.currentHuntItems count];
+  }
+  [self.huntProgressBar setProgress: progressPercentage animated: YES];
 
   if (count == [self.hunt.currentHuntItems count]) {
     message = @"Good work, you found them all!";
   }
   else {
-    message = @"Progress: %d/%d";
+    message = @"%d/%d";
   }
 
   self.huntInformationHeader.text = [NSString stringWithFormat:message,
@@ -62,6 +72,7 @@
 
 - (void)viewDidUnload {
   [self setHuntInformationHeader:nil];
+  [self setHuntProgressBar:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
 }

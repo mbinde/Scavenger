@@ -35,19 +35,24 @@
                                     <outlet property="delegate" destination="IK8-zS-SbK" id="j7r-Fm-cRg"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aBe-fU-wOZ">
-                                <rect key="frame" x="7" y="12" width="197" height="29"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aBe-fU-wOZ">
+                                <rect key="frame" x="62" y="20" width="197" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" id="qcE-rU-iew">
+                                <rect key="frame" x="7" y="12" width="305" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ml0-MC-zAF"/>
                     <connections>
                         <outlet property="huntInformationHeader" destination="aBe-fU-wOZ" id="PUy-ge-oAR"/>
+                        <outlet property="huntProgressBar" destination="qcE-rU-iew" id="d1O-TJ-l3O"/>
                     </connections>
                 </viewController>
             </objects>
@@ -235,6 +240,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HuntTableViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="huntInformationHeader" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="huntProgressBar" candidateClass="UIProgressView"/>
             </relationships>
         </class>
         <class className="ScavengerViewController" superclassName="UIViewController">
