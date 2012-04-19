@@ -24,6 +24,7 @@
 		F5FA00C8153A2ECB0089A1AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5FA00C6153A2ECB0089A1AD /* InfoPlist.strings */; };
 		F5FA00CB153A2ECB0089A1AD /* ScavengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */; };
 		F5FA00D6153A36840089A1AD /* HuntTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FA00D5153A36840089A1AD /* HuntTableViewController.m */; };
+		F5FE10EA153FBF19000D3893 /* HuntOptionsScavengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FE10E9153FBF19000D3893 /* HuntOptionsScavengerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		F5FA00CA153A2ECB0089A1AD /* ScavengerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengerTests.m; sourceTree = "<group>"; };
 		F5FA00D4153A36840089A1AD /* HuntTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntTableViewController.h; sourceTree = "<group>"; };
 		F5FA00D5153A36840089A1AD /* HuntTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntTableViewController.m; sourceTree = "<group>"; };
+		F5FE10E8153FBF19000D3893 /* HuntOptionsScavengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntOptionsScavengerViewController.h; sourceTree = "<group>"; };
+		F5FE10E9153FBF19000D3893 /* HuntOptionsScavengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntOptionsScavengerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 		F5FA00A2153A2ECA0089A1AD /* Scavenger */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE10E8153FBF19000D3893 /* HuntOptionsScavengerViewController.h */,
+				F5FE10E9153FBF19000D3893 /* HuntOptionsScavengerViewController.m */,
 				F58C3597153D2A5F00765AE0 /* HuntSegue.h */,
 				F58C3598153D2A5F00765AE0 /* HuntSegue.m */,
 				F58C358F153BB4D800765AE0 /* Hunt.h */,
@@ -284,6 +289,7 @@
 				F5FA00D6153A36840089A1AD /* HuntTableViewController.m in Sources */,
 				F58C3591153BB4D800765AE0 /* Hunt.m in Sources */,
 				F58C3599153D2A5F00765AE0 /* HuntSegue.m in Sources */,
+				F5FE10EA153FBF19000D3893 /* HuntOptionsScavengerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
