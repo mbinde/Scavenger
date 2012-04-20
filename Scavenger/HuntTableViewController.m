@@ -27,6 +27,9 @@
 @synthesize huntProgressBar = _huntProgressBar;
 
 
+- (IBAction)cancelInProgressHunt:(id)sender {
+  [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (void) viewWillAppear:(BOOL)animated
 {
