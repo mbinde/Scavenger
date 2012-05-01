@@ -108,6 +108,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qr1-hl-nEO" kind="push" identifier="Setup Hunt 2" id="Rkn-Jz-xnb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hr8-jI-Zku">
                                 <rect key="frame" x="33" y="233" width="95" height="96"/>
@@ -267,4 +270,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rkn-Jz-xnb"/>
+    </inferredMetricsTieBreakers>
 </document>
