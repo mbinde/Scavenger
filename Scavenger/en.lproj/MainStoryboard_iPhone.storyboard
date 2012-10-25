@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="v9n-7L-cCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="v9n-7L-cCe">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Hunt Table View Controller-->
         <scene sceneID="zid-EX-yI3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uXP-SZ-BUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="IK8-zS-SbK" customClass="HuntTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gq1-iw-t6m">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -70,13 +68,13 @@
                         <outlet property="huntProgressBar" destination="qcE-rU-iew" id="d1O-TJ-l3O"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXP-SZ-BUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536" y="-192"/>
+            <point key="canvasLocation" x="2301" y="-192"/>
         </scene>
         <!--Scavenger View Controller-->
         <scene sceneID="Mwp-Zh-5JX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P2z-s1-siv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lT8-I2-HZP" customClass="ScavengerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zDI-5s-DWF">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -116,13 +114,16 @@
                                 <rect key="frame" x="33" y="233" width="95" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" title="Grocery">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qr1-hl-nEO" kind="push" id="6gR-uQ-MwI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5qo-jV-BOU">
                                 <rect key="frame" x="181" y="233" width="95" height="96"/>
@@ -141,13 +142,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="lUC-53-LgG"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2z-s1-siv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="-257"/>
+            <point key="canvasLocation" x="1417" y="-257"/>
         </scene>
         <!--Hunt Options Scavenger View Controller-->
         <scene sceneID="D3d-cz-LU2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JrE-UP-ySa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qr1-hl-nEO" customClass="HuntOptionsScavengerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9oH-kB-ALZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -225,13 +226,13 @@
                         <outlet property="huntSizeLabel" destination="hCx-gf-r8U" id="hHv-F6-Ocg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrE-UP-ySa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="-302"/>
+            <point key="canvasLocation" x="1867" y="-302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wf5-KC-23K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MB2-jw-2Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="v9n-7L-cCe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tTF-VP-eOL">
@@ -243,20 +244,24 @@
                         <segue destination="lT8-I2-HZP" kind="relationship" relationship="rootViewController" id="ELq-HS-4XJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MB2-jw-2Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="-257"/>
+            <point key="canvasLocation" x="1024" y="-257"/>
         </scene>
     </scenes>
     <classes>
         <class className="HuntOptionsScavengerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HuntOptionsScavengerViewController.h"/>
             <relationships>
+                <relationship kind="action" name="huntSizeSlider:" candidateClass="UISlider"/>
+                <relationship kind="action" name="timerToggle:" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="huntSizeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="HuntTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HuntTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelInProgressHunt:"/>
                 <relationship kind="outlet" name="huntInformationHeader" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="huntProgressBar" candidateClass="UIProgressView"/>
             </relationships>

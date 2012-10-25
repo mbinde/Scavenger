@@ -45,7 +45,7 @@
 +(NSArray *) shuffleArray: (NSMutableArray *) givenArray {
   // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
   int size = [givenArray count];
-
+  
   for (int i = size; i > 0; --i) {
     int randomNumber = arc4random() % size;
     [givenArray exchangeObjectAtIndex:(i-1) withObjectAtIndex:randomNumber];
@@ -112,18 +112,18 @@
 // designated initializer
 -(id) initWithHuntSize: (NSNumber *) size withHuntID: (NSNumber *) huntID withSeed: (int) seed {
   self = [super init];
-
+  
   self.huntSize = size;
   self.huntID = huntID;
   self.rngSeed = seed;
-  
-  srandom(seed);
 
+  srandom(seed);
+  
   return self;
 }
 
 -(id) initWithHuntSize: (NSNumber *) size withHuntID: (NSNumber *) huntID {
-  self = [self initWithHuntSize: size 
+  self = [self initWithHuntSize: size
                      withHuntID: huntID
                        withSeed: [[NSDate date] timeIntervalSince1970]
           ];
@@ -142,7 +142,7 @@
   self = [self initWithHuntSize: [[self class] randomHuntSize]
                      withHuntID: [[self class] randomHuntID]
           ];
-
+  
   return self;
 }
 
@@ -180,15 +180,15 @@
 // write tests for this that gets the number of locations, checks each to make sure they return something, then checks N+1 to make sure it returns nil
 
 +(NSArray *) validHuntIDs {
-  return [NSArray arrayWithObjects: 
-          [NSNumber numberWithInteger: 1], 
+  return [NSArray arrayWithObjects:
+          [NSNumber numberWithInteger: 1],
           nil];
 }
 
 +(NSArray *) validHuntSizes {
-  return [NSArray arrayWithObjects: 
-          [NSNumber numberWithInteger: 5], 
-          [NSNumber numberWithInteger: 10], 
+  return [NSArray arrayWithObjects:
+          [NSNumber numberWithInteger: 5],
+          [NSNumber numberWithInteger: 10],
           nil];
 }
 
@@ -233,11 +233,29 @@
                @"Dog", @"13",
                nil];
       break;
+    case 3: // Park
+      items = [NSDictionary dictionaryWithObjectsAndKeys:
+               @"Apples", @"0",
+               @"Eggs",@"1",
+               @"Cheese",@"2",
+               @"Milk",@"3",
+               @"Fish",@"4",
+               @"Chicken",@"5",
+               @"Shopping Basket",@"6",
+               @"Coupon",@"7",
+               @"Cereal",@"8",
+               @"Bread",@"9",
+               @"Brocolli",@"10",
+               @"Something Green", @"11",
+               @"Something Round", @"12",
+               @"Something Flat", @"13",
+               nil];
+      break;
     default:
       items = nil;
       break;
   }
-
+  
   return items;
 }
 

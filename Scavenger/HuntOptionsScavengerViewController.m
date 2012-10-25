@@ -18,6 +18,14 @@
 @synthesize timerSetting = _timerSetting;
 @synthesize huntSizeLabel = _huntSizeLabel;
 
+-(NSNumber *) huntID {
+  NSLog(@"Hunt ID is: %@", _huntID);
+  if (!_huntID) {
+    _huntID = [NSNumber numberWithInt:3];
+  }
+  return _huntID;
+}
+
 
 -(NSNumber *) huntSize {
   if (! _huntSize) {
@@ -53,7 +61,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
-  if ([segue.identifier hasPrefix:@"Start Hunt"]) {    
+  if ([segue.identifier hasPrefix:@"Start Hunt"]) {
     [segue.destinationViewController setHuntID: self.huntID];
     [segue.destinationViewController setTimerSetting: self.timerSetting];
     [segue.destinationViewController setHuntSize: self.huntSize];
