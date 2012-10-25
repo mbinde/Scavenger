@@ -230,6 +230,7 @@
                @"Nurse Log", @"10",
                @"Conifer", @"11",
                @"Dirt", @"12",
+               @"Dog", @"13",
                nil];
       break;
     default:
