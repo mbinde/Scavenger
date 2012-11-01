@@ -13,6 +13,7 @@
 		B27781A81642420100A28EB2 /* Tree.png in Resources */ = {isa = PBXBuildFile; fileRef = B27781A71642420100A28EB2 /* Tree.png */; };
 		B27781AB164242EC00A28EB2 /* Cardboard - iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = B27781A9164242EC00A28EB2 /* Cardboard - iPhone.png */; };
 		B27781AC164242EC00A28EB2 /* Cardboard - iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27781AA164242EC00A28EB2 /* Cardboard - iPhone@2x.png */; };
+		B27781AE1642523200A28EB2 /* TeardropTrailer.png in Resources */ = {isa = PBXBuildFile; fileRef = B27781AD1642523200A28EB2 /* TeardropTrailer.png */; };
 		F58C3591153BB4D800765AE0 /* Hunt.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C3590153BB4D800765AE0 /* Hunt.m */; };
 		F58C3599153D2A5F00765AE0 /* HuntSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C3598153D2A5F00765AE0 /* HuntSegue.m */; };
 		F5FA009D153A2ECA0089A1AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FA009C153A2ECA0089A1AD /* UIKit.framework */; };
@@ -50,6 +51,7 @@
 		B27781A71642420100A28EB2 /* Tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tree.png; sourceTree = "<group>"; };
 		B27781A9164242EC00A28EB2 /* Cardboard - iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cardboard - iPhone.png"; sourceTree = "<group>"; };
 		B27781AA164242EC00A28EB2 /* Cardboard - iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cardboard - iPhone@2x.png"; sourceTree = "<group>"; };
+		B27781AD1642523200A28EB2 /* TeardropTrailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TeardropTrailer.png; sourceTree = "<group>"; };
 		F58C358F153BB4D800765AE0 /* Hunt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hunt.h; path = ../Hunt.h; sourceTree = "<group>"; };
 		F58C3590153BB4D800765AE0 /* Hunt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hunt.m; path = ../Hunt.m; sourceTree = "<group>"; };
 		F58C3597153D2A5F00765AE0 /* HuntSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntSegue.h; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				B27781A9164242EC00A28EB2 /* Cardboard - iPhone.png */,
 				B27781AA164242EC00A28EB2 /* Cardboard - iPhone@2x.png */,
 				B277819F16423C6100A28EB2 /* bee.png */,
+				B27781AD1642523200A28EB2 /* TeardropTrailer.png */,
 				B27781A51642419600A28EB2 /* Highway.png */,
 				B27781A71642420100A28EB2 /* Tree.png */,
 				B27781A216423E0100A28EB2 /* cart3.png */,
@@ -282,6 +285,7 @@
 				B27781A81642420100A28EB2 /* Tree.png in Resources */,
 				B27781AB164242EC00A28EB2 /* Cardboard - iPhone.png in Resources */,
 				B27781AC164242EC00A28EB2 /* Cardboard - iPhone@2x.png in Resources */,
+				B27781AE1642523200A28EB2 /* TeardropTrailer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
