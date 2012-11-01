@@ -233,7 +233,7 @@
                @"Dog", @"13",
                nil];
       break;
-    case 3: // Park
+    case 3: // Grocery
       items = [NSDictionary dictionaryWithObjectsAndKeys:
                @"Apples", @"0",
                @"Eggs",@"1",
@@ -249,6 +249,23 @@
                @"Something Green", @"11",
                @"Something Round", @"12",
                @"Something Flat", @"13",
+               nil];
+      break;
+    case 4: // Highway
+      items = [NSDictionary dictionaryWithObjectsAndKeys:
+               @"Blue Car", @"0",
+               @"Red Car",@"1",
+               @"White Car",@"2",
+               @"Black Car",@"3",
+               @"RV",@"4",
+               @"Truck",@"5",
+               @"Speed Limit Sign",@"6",
+               @"Tree",@"7",
+               @"Bridge",@"8",
+               @"Sportcar",@"9",
+               @"Highway Patrol",@"10",
+               @"Out of state license plate", @"11",
+               @"U-Haul Truck", @"12",
                nil];
       break;
     default:
