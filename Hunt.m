@@ -83,7 +83,11 @@
 
 -(NSDictionary *) allHuntItems {
   if (!_allHuntItems) {
-    _allHuntItems = [[self class] itemsForHuntID: self.huntID];
+    NSDictionary *globalHuntItems = [[self class] itemsForHuntID: [NSNumber numberWithInt:-1]];
+    NSDictionary *specificHuntItems = [[self class] itemsForHuntID: self.huntID];
+    NSMutableDictionary *combinedHuntItems = [NSMutableDictionary dictionaryWithDictionary:globalHuntItems];
+    [combinedHuntItems addEntriesFromDictionary:specificHuntItems];
+    _allHuntItems = [NSDictionary dictionaryWithDictionary: combinedHuntItems]; // make an immutable copy;
   }
   return _allHuntItems;
 }
@@ -195,7 +199,21 @@
 +(NSDictionary *) itemsForHuntID: (NSNumber *) huntID {
   NSDictionary *items = nil;
   
+  // These use dictionaries instead of arrays so we can track statistics;
+  // without reliable keys, we wouldn't be able to do internationalization,
+  // tracking, etc.
+  
   switch ([huntID integerValue]) {
+    case -1: // global stuff; counts down from -1
+      items = [NSDictionary dictionaryWithObjectsAndKeys:
+               @"Something Blue", @"-1",
+               @"Something Red", @"-2",
+               @"Something Brown", @"-3",
+               @"Something Green", @"-4",
+               @"Something Round", @"-5",
+               @"Something Flat", @"-6",
+               nil];
+      break;
     case 1: // RV
       items = [NSDictionary dictionaryWithObjectsAndKeys:
                @"Tree", @"0",
@@ -246,9 +264,6 @@
                @"Cereal",@"8",
                @"Bread",@"9",
                @"Brocolli",@"10",
-               @"Something Green", @"11",
-               @"Something Round", @"12",
-               @"Something Flat", @"13",
                nil];
       break;
     case 4: // Highway
