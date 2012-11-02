@@ -17,6 +17,7 @@
 @synthesize huntSize = _huntSize;
 @synthesize timerSetting = _timerSetting;
 @synthesize huntSizeLabel = _huntSizeLabel;
+@synthesize huntChoiceLabel = _huntChoiceLabel;
 
 -(NSNumber *) huntID {
   NSLog(@"Hunt ID is: %@", _huntID);

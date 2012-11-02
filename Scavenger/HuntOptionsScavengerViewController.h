@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSNumber *huntSize;
 @property (nonatomic) BOOL timerSetting;
 @property (weak, nonatomic) IBOutlet UILabel *huntSizeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *huntChoiceLabel;
 
 @end

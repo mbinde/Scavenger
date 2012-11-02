@@ -197,6 +197,7 @@
 }
 
 +(NSDictionary *) itemsForHuntID: (NSNumber *) huntID {
+  NSDictionary *data = nil;
   NSDictionary *items = nil;
   
   // These use dictionaries instead of arrays so we can track statistics;
@@ -206,12 +207,19 @@
   switch ([huntID integerValue]) {
     case -1: // global stuff; counts down from -1
       items = [NSDictionary dictionaryWithObjectsAndKeys:
-               @"Something Blue", @"-1",
-               @"Something Red", @"-2",
-               @"Something Brown", @"-3",
+               @"Something Red", @"-1",
+               @"Something Orange", @"-2",
+               @"Something Yellow", @"-3",
                @"Something Green", @"-4",
-               @"Something Round", @"-5",
-               @"Something Flat", @"-6",
+               @"Something Blue", @"-5",
+               @"Something Purple", @"-6",
+               @"Something Brown", @"-7",
+               @"Something Grey", @"-8",
+               @"Something Black", @"-9",
+               @"Something White", @"-10",
+               @"Something Round", @"-11",
+               @"Something Flat", @"-12",
+               @"Something Pointy", @"-13",
                nil];
       break;
     case 1: // RV
