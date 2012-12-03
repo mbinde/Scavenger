@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="v9n-7L-cCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="v9n-7L-cCe">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Hunt Table View Controller-->
@@ -305,27 +305,6 @@
         <image name="bee.png" width="617" height="800"/>
         <image name="cart3.png" width="800" height="650"/>
     </resources>
-    <classes>
-        <class className="HuntOptionsScavengerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HuntOptionsScavengerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="huntSizeSlider:" candidateClass="UISlider"/>
-                <relationship kind="action" name="timerToggle:" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="huntSizeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HuntTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HuntTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelInProgressHunt:"/>
-                <relationship kind="outlet" name="huntInformationHeader" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="huntProgressBar" candidateClass="UIProgressView"/>
-            </relationships>
-        </class>
-        <class className="ScavengerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScavengerViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

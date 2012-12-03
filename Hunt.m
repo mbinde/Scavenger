@@ -196,33 +196,35 @@
           nil];
 }
 
-+(NSDictionary *) itemsForHuntID: (NSNumber *) huntID {
++(NSDictionary *) dataForHuntID: (NSNumber *) huntID {
   NSDictionary *data = nil;
   NSDictionary *items = nil;
+  NSString *title = nil;
+  
+  // global items; we'll add the specific items later
+  NSMutableDictionary *allItems = [NSDictionary dictionaryWithObjectsAndKeys:
+           @"Something Red", @"-1",
+           @"Something Orange", @"-2",
+           @"Something Yellow", @"-3",
+           @"Something Green", @"-4",
+           @"Something Blue", @"-5",
+           @"Something Purple", @"-6",
+           @"Something Brown", @"-7",
+           @"Something Grey", @"-8",
+           @"Something Black", @"-9",
+           @"Something White", @"-10",
+           @"Something Round", @"-11",
+           @"Something Flat", @"-12",
+           @"Something Pointy", @"-13",
+           nil];
   
   // These use dictionaries instead of arrays so we can track statistics;
   // without reliable keys, we wouldn't be able to do internationalization,
   // tracking, etc.
   
   switch ([huntID integerValue]) {
-    case -1: // global stuff; counts down from -1
-      items = [NSDictionary dictionaryWithObjectsAndKeys:
-               @"Something Red", @"-1",
-               @"Something Orange", @"-2",
-               @"Something Yellow", @"-3",
-               @"Something Green", @"-4",
-               @"Something Blue", @"-5",
-               @"Something Purple", @"-6",
-               @"Something Brown", @"-7",
-               @"Something Grey", @"-8",
-               @"Something Black", @"-9",
-               @"Something White", @"-10",
-               @"Something Round", @"-11",
-               @"Something Flat", @"-12",
-               @"Something Pointy", @"-13",
-               nil];
-      break;
     case 1: // RV
+      title = @"RV";
       items = [NSDictionary dictionaryWithObjectsAndKeys:
                @"Tree", @"0",
                @"Blanket", @"1",
@@ -242,6 +244,7 @@
                nil];
       break;
     case 2: // Park
+      title = @"Park";
       items = [NSDictionary dictionaryWithObjectsAndKeys:
                @"Tree", @"0",
                @"Branch", @"1",
@@ -260,6 +263,7 @@
                nil];
       break;
     case 3: // Grocery
+      title = @"Grocery";
       items = [NSDictionary dictionaryWithObjectsAndKeys:
                @"Apples", @"0",
                @"Eggs",@"1",
@@ -275,6 +279,7 @@
                nil];
       break;
     case 4: // Highway
+      title = @"Highway";
       items = [NSDictionary dictionaryWithObjectsAndKeys:
                @"Blue Car", @"0",
                @"Red Car",@"1",
@@ -295,6 +300,14 @@
       items = nil;
       break;
   }
+  
+  [allItems addEntriesFromDictionary:items];
+  
+  data = [NSDictionary dictionaryWithObjectsAndKeys:
+          title, @"title",
+          huntID, @"id",
+          [NSDictionary dictionaryWithDictionary: allItems], @"items",
+          nil];
   
   return items;
 }
