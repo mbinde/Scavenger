@@ -16,7 +16,8 @@
 @property (strong, nonatomic) NSDate *startDateOfCurrentHuntingSession;
 @property (nonatomic) int cumulativeSecondsSpentHunting;
 
-+(NSDictionary *) itemsForHuntID: (NSNumber *) huntID;
+//+(NSDictionary *) itemsForHuntID: (NSNumber *) huntID;
++(NSDictionary *) dataForHuntID: (NSNumber *) huntID;
 @end
 
 
@@ -83,8 +84,8 @@
 
 -(NSDictionary *) allHuntItems {
   if (!_allHuntItems) {
-    NSDictionary *globalHuntItems = [[self class] itemsForHuntID: [NSNumber numberWithInt:-1]];
-    NSDictionary *specificHuntItems = [[self class] itemsForHuntID: self.huntID];
+    NSDictionary *globalHuntItems = [[self class] dataForHuntID: [NSNumber numberWithInt:-1]];
+    NSDictionary *specificHuntItems = [[self class] dataForHuntID: self.huntID];
     NSMutableDictionary *combinedHuntItems = [NSMutableDictionary dictionaryWithDictionary:globalHuntItems];
     [combinedHuntItems addEntriesFromDictionary:specificHuntItems];
     _allHuntItems = [NSDictionary dictionaryWithDictionary: combinedHuntItems]; // make an immutable copy;
@@ -202,7 +203,7 @@
   NSString *title = nil;
   
   // global items; we'll add the specific items later
-  NSMutableDictionary *allItems = [NSDictionary dictionaryWithObjectsAndKeys:
+  NSMutableDictionary *allItems = [NSMutableDictionary dictionaryWithObjectsAndKeys:
            @"Something Red", @"-1",
            @"Something Orange", @"-2",
            @"Something Yellow", @"-3",
